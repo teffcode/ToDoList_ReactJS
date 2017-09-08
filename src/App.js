@@ -32,12 +32,6 @@ class App extends Component {
 
     e.preventDefault();
   }
- 
-  createTasks = (item) => (
-    this.setState({
-      items: this.state.items.map({item.text})
-    })
-  )
 
   render() {
 
@@ -47,7 +41,7 @@ class App extends Component {
             onSubmit={this.addItem} 
             ref={(a) => this._inputElement = a}
           >
-            <TodoItems listItems={this.createTasks}/>
+            <TodoItems/>
           </TodoList>
       </div>
     );
