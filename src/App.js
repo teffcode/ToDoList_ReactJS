@@ -1,48 +1,58 @@
 import React, { Component } from 'react';
 
-import TodoList from './components/TodoList'
-import TodoItems from './components/TodoItems'
-import './App.css';
+import Title from './components/Title';
+import TodoForm from './components/TodoForm';
+import Todo from './components/Todo';
+import TodoList from './components/TodoList';
 
 class App extends Component {
 
   constructor(){
-    super()
+    super();
+
     this.state = {
-      items: []
+      data: [],
+      text: ''
     }
   }
 
-  addItem(e){
-
-    let itemArray = this.state.items;
-
-    itemArray.push(
-      {
-        text: this._inputElement.value,
-        key: Date.now()
-      }
-    );
-  
-    this.setState({
-      items: itemArray
-    });
-  
-    this._inputElement.value = "";
-
+  addTodo = (e) => {
     e.preventDefault();
+
+    this.state.data.push(this.state.text)
+
+    this.setState({
+      data: this.state.data
+    })
+
+    console.log(this.state.data)
   }
 
-  render() {
+  handleOnChange = (e) => {
+    this.setState({
+      text: e.target.value
+    })
+  }
 
-    return (
+  renderTodoNode() {
+    return this.state.data.map((todo) => {
+      return (
+          <Todo todoText={todo}/>
+      );
+    });
+  }
+
+  render(){
+
+    return(
       <div>
-          <TodoList 
-            onSubmit={this.addItem} 
-            ref={(a) => this._inputElement = a}
-          >
-            <TodoItems/>
-          </TodoList>
+        <Title titleName="Todo List 💛"/>
+        <TodoForm 
+          inputValue={this.state.text}
+          handleOnChange={this.handleOnChange}
+          onClick={this.addTodo}
+        />
+        <TodoList todo={this.renderTodoNode()}/>
       </div>
     );
   }

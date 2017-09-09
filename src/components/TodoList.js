@@ -1,18 +1,8 @@
-import React from 'react';
-import './TodoList.css';
+import React from 'react'
 
-const TodoList = ({ onSubmit, ref, children }) => (
-    <div className="todoListMain">
-        <div className="header">
-            <form onSubmit={onSubmit}>
-                <input ref={ref}
-                    placeholder="enter task">
-                </input>
-                <button type="submit">add</button>
-            </form>
-        </div>
-        {children}
-    </div>
-);
+const TodoList = ({ todo }) => {
+  // Map through the todos
+  return (<ul>{todo}</ul>);
+}
 
 export default TodoList;
