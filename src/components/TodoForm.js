@@ -1,8 +1,7 @@
 import React from 'react'
 
-const TodoForm = ({ inputValue, handleOnChange, onClick }) => {
+const TodoForm = ({ inputValue, handleOnChange, onClick }) => (
 
-  return (
     <div>
       <input 
         value={inputValue}
@@ -12,7 +11,7 @@ const TodoForm = ({ inputValue, handleOnChange, onClick }) => {
         +
       </button>
     </div>
-  );
-};
+
+);
 
 export default TodoForm;

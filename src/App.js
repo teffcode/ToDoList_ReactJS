@@ -16,7 +16,7 @@ class App extends Component {
     }
   }
 
-  addTodo = (e) => {
+  handleAddTask = (e) => {
     e.preventDefault();
 
     this.state.data.push(this.state.text)
@@ -50,7 +50,7 @@ class App extends Component {
         <TodoForm 
           inputValue={this.state.text}
           handleOnChange={this.handleOnChange}
-          onClick={this.addTodo}
+          onClick={this.handleAddTask}
         />
         <TodoList todo={this.renderTodoNode()}/>
       </div>

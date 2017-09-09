@@ -1,8 +1,5 @@
 import React from 'react'
 
-const TodoList = ({ todo }) => {
-  // Map through the todos
-  return (<ul>{todo}</ul>);
-}
+const TodoList = ({ todo }) => <ul>{todo}</ul>
 
 export default TodoList;
