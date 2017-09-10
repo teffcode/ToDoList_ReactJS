@@ -4,6 +4,7 @@ import Title from './components/Title';
 import TodoForm from './components/TodoForm';
 import Todo from './components/Todo';
 import TodoList from './components/TodoList';
+import './App.css'
 
 var lookupTable = {
 	'correr': '🏃',
@@ -45,7 +46,7 @@ class App extends Component {
   renderTodoNode() {
 
     function emojify (text) {
-      
+
       var words = text.split(' ')
       var result = []
       
@@ -71,7 +72,9 @@ class App extends Component {
 
     return(
       <div>
-        <Title titleName="Todo List 💛"/>
+        <div className="containerTitle">
+          <Title titleName="Emoji Todo List"/>
+        </div>
         <TodoForm 
           inputValue={this.state.text}
           handleOnChange={this.handleOnChange}
