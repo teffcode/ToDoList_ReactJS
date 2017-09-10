@@ -79,12 +79,14 @@ class App extends Component {
           <h2>Add</h2>
         </div>
         <div className="btnBefore"/>
-        <TodoForm 
-          inputValue={this.state.text}
-          handleOnChange={this.handleOnChange}
-          onClick={this.handleAddTodo}
-        />
-        <TodoList todo={this.renderTodoNode()}/>
+        <div className="containerForm">
+          <TodoForm 
+            inputValue={this.state.text}
+            handleOnChange={this.handleOnChange}
+            onClick={this.handleAddTodo}
+          />
+          <TodoList todo={this.renderTodoNode()}/>
+        </div>
       </div>
     );
   }
