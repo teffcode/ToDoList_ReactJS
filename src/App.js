@@ -68,6 +68,18 @@ class App extends Component {
     });
   }
 
+  handleKeyPress = (e) => {
+    
+    if(e.key == 'Enter'){
+      e.preventDefault();
+      this.state.data.push(this.state.text)
+
+      this.setState({
+        data: this.state.data
+      })
+    }
+  }
+
   render(){
 
     return(
@@ -83,6 +95,7 @@ class App extends Component {
           <TodoForm 
             inputValue={this.state.text}
             handleOnChange={this.handleOnChange}
+            enter={this.handleKeyPress}
             onClick={this.handleAddTodo}
           />
           <TodoList todo={this.renderTodoNode()}/>
