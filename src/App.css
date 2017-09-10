@@ -3,25 +3,29 @@ body {
   background-image: url(http://www.graphicartsunit.com/images/noise.png)
 }
 
-.containerTitle {
-  background: #e2df45;
-  background-image: url(http://www.graphicartsunit.com/images/noise.png);
-  width: 430px;
+.containerTitle { 
+  width: 400px;
   height: 100px;
   margin: 0 auto;
   margin-top: 20px;
   border-style: solid;
   border-color: #FFF;
-  border-width: 7px;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 25px;
-  color: #03384b;
-  display: flex;
-  justify-content: center;
+  border-width: 5px;
+  border-radius: 8px;
 }
 
 .containerTitle h1 {
-  margin-top: 18px;
+  margin: 3px;
+  background: #e2df45;
+  background-image: url(http://www.graphicartsunit.com/images/noise.png);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 50px;
+  color: #03384b;
+  padding: 22px 30px 22px 30px;
+  border-radius: 8px;
+  position: absolute;
+  left: 445px;
+  z-index: -1;
 }
 
 .btnAfter {
