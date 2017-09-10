@@ -25,44 +25,17 @@ body {
 }
 
 .btnAfter {
-  width: 40px;
-  top: 20px;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 15px;
-  font-weight: bold;
-  color: #03384b;
-  padding: 15px 30px 15px 30px;
-  position: relative;
-  border: 3px solid #03384b;
+  background: #e8afbb;
+  background-image: url(http://www.graphicartsunit.com/images/noise.png);
+  width: 103px;
+  height: 63px;
+  position: absolute;
+  top: 159px;
+  left: 727px;
   border-radius: 40px;
-  left: 720px;
+  border: none;
+  outline: none;
+  z-index: -1;
   cursor: pointer;
 }
 
-.btnAfter h2 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.btnBefore {
-    background: #FFF;
-    background-image: url(http://www.graphicartsunit.com/images/noise.png);
-    width: 103px;
-    height: 63px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    color: #03384b;
-    position: absolute;
-    top: 159px;
-    left: 727px;
-    border-radius: 40px;
-    z-index: -1;
-    cursor: pointer;
-}
-  
-.containerForm {
-  position: absolute;
-  left: 100px;
-}
- 

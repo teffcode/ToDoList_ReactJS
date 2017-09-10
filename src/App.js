@@ -88,9 +88,7 @@ class App extends Component {
           <Title titleName="Emoji Todo List"/>
         </div>
         <div className="btnAfter">
-          <h2>Add</h2>
         </div>
-        <div className="btnBefore"/>
         <TodoForm 
           inputValue={this.state.text}
           handleOnChange={this.handleOnChange}

@@ -11,7 +11,7 @@ const TodoForm = ({ inputValue, handleOnChange, enter, onClick }) => (
         onKeyPress={enter}
       />
       <button onClick={onClick}>
-        +
+        add
       </button>
     </div>
 

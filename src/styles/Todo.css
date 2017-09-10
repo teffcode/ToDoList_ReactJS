@@ -2,10 +2,10 @@ li {
     background: #c5ecec;
     margin: 10px;
     width: 120px;
-    height: 62px;
+    height: 60px;
     border-radius: 40px;
     display: flex;
     justify-content: center;
     padding-top: 8px;
-    font-size: 50px;
+    font-size: 45px;
 }
