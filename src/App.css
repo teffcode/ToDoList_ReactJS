@@ -45,7 +45,8 @@ body {
 }
 
 .btnBefore {
-    background: url(http://www.graphicartsunit.com/images/noise2.png);
+    background: #FFF;
+    background-image: url(http://www.graphicartsunit.com/images/noise.png);
     width: 103px;
     height: 63px;
     font-family: 'Quicksand', sans-serif;
