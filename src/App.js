@@ -2,82 +2,43 @@ import React, { Component } from 'react';
 
 import Title from './components/Title';
 import TodoForm from './components/TodoForm';
-import Todo from './components/Todo';
 import TodoList from './components/TodoList';
+
 import './App.css'
 
-var lookupTable = {
-	'correr': '🏃',
-  'gritar': '🗣',
-  'vomitar': '🤢',
-  'comer': '🤤',
-  'pizza': '🍕',
-}
 
 class App extends Component {
-
-  constructor(){
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      data: [],
+      todos: [],
       text: ''
     }
   }
 
-  handleAddTodo = (e) => {
-    e.preventDefault();
-
-    this.state.data.push(this.state.text)
-
-    this.setState({
-      data: this.state.data
-    })
-
-    console.log(this.state.data)
-  }
-
-  handleOnChange = (e) => {
+  handleChange = (e) => {
     this.setState({
       text: e.target.value
     })
   }
 
-  renderTodoNode() {
 
-    function emojify (text) {
-
-      var words = text.split(' ')
-      var result = []
-      
-      words.forEach(function (word) {
-        if (lookupTable[word]) {
-          result.push(lookupTable[word])
-        } else {
-          result.push(word)
-        }
+  addToState = (event) => {  
+    if (event.type === "click" || event.key === "Enter") {
+      this.setState(prevState => { return {
+        text: '',
+        todos: prevState.todos.concat(this.state.text)} 
       })
-      
-      return result.join(' ')
     }
-
-    return this.state.data.map((todo) => {
-      return (
-          <Todo todoText={emojify(todo)}/>
-      );
-    });
   }
 
-  handleKeyPress = (e) => {
-    
-    if(e.key == 'Enter'){
-      e.preventDefault();
-      this.state.data.push(this.state.text)
+  removeFromState = (event) => {
+    const todoText = event.target.dataset.text;
 
-      this.setState({
-        data: this.state.data
-      })
-    }
+    this.setState(prevState => { return {
+      todos: prevState.todos.filter(todo => todo !== todoText)} 
+    })
   }
 
   render(){
@@ -90,11 +51,11 @@ class App extends Component {
         <div className="btnAfter"/>
         <TodoForm 
           inputValue={this.state.text}
-          handleOnChange={this.handleOnChange}
-          enter={this.handleKeyPress}
-          onClick={this.handleAddTodo}
+          handleChange={this.handleChange}
+          handleKeyPress={this.addToState}
+          handleClick={this.addToState}
         />
-        <TodoList todo={this.renderTodoNode()}/>
+        <TodoList todos={this.state.todos} handleRemove={this.removeFromState} />
         </div>
     );
   }

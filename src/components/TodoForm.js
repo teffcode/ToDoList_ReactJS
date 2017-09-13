@@ -2,15 +2,15 @@ import React from 'react';
 
 import '../styles/TodoForm.css';
 
-const TodoForm = ({ inputValue, handleOnChange, enter, onClick }) => (
+const TodoForm = ({ inputValue, handleChange, handleKeyPress, handleClick }) => (
 
     <div>
       <input 
         value={inputValue}
-        onChange={handleOnChange}
-        onKeyPress={enter}
+        onChange={handleChange}
+        onKeyPress={handleKeyPress}
       />
-      <button onClick={onClick}>
+      <button onClick={handleClick}>
         add
       </button>
     </div>
